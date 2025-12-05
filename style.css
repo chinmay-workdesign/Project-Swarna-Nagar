@@ -1,189 +1,84 @@
+body {
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+    transition: background-color 0.3s, color 0.3s;
+}
 
-        /* --- CSS (style.css) --- */
-        :root {
-            --primary: #6c5ce7;
-            --bg: #dfe6e9;
-            --card-bg: #ffffff;
-            --text: #2d3436;
-            --danger: #d63031;
-            --success: #00b894;
-            
-            /* Category Colors */
-            --cat-school: #0984e3;
-            --cat-knowledge: #00b894;
-            --cat-entertainment: #e17055;
-            --cat-other: #636e72;
-        }
+h1, h2, h3, .brand-font {
+    font-family: 'Space Grotesk', sans-serif;
+}
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            min-height: 100vh;
-        }
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
 
-        .container {
-            width: 100%;
-            max-width: 600px;
-            background: var(--card-bg);
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            padding: 30px;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(10px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
 
-        h1 {
-            text-align: center;
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
+/* Card Hover Effects - Adaptive to theme */
+.problem-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
 
-        /* --- Input Section --- */
-        .input-group {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            background: #f1f2f6;
-            padding: 20px;
-            border-radius: 10px;
-        }
+.problem-card:hover {
+    transform: translateY(-5px);
+    border-color: #10b981; /* Emerald-500 */
+}
 
-        input, select, button {
-            padding: 12px;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            font-size: 1rem;
-            outline: none;
-            transition: 0.3s;
-        }
+/* Dark mode hover shadow */
+html.dark .problem-card:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+}
 
-        input:focus, select:focus {
-            border-color: var(--primary);
-        }
+/* Light mode hover shadow */
+html:not(.dark) .problem-card:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
 
-        /* Responsive Row for Desktop */
-        @media (min-width: 600px) {
-            .row {
-                display: flex;
-                gap: 10px;
-            }
-            .row > * {
-                flex: 1;
-            }
-        }
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
 
-        button#add-btn {
-            background-color: var(--primary);
-            color: white;
-            border: none;
-            font-weight: bold;
-            cursor: pointer;
-            margin-top: 10px;
-        }
+::-webkit-scrollbar-track {
+    background: #f3f4f6;
+}
 
-        button#add-btn:hover {
-            background-color: #5849be;
-            transform: translateY(-2px);
-        }
+html.dark ::-webkit-scrollbar-track {
+    background: #111827;
+}
 
-        /* --- Task List Section --- */
-        ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
+::-webkit-scrollbar-thumb {
+    background: #059669;
+    border-radius: 4px;
+}
 
-        .task-card {
-            background: white;
-            border-left: 5px solid var(--cat-other); /* Default color */
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
+::-webkit-scrollbar-thumb:hover {
+    background: #047857;
+}
 
-        .task-card:hover {
-            transform: translateX(5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
+/* Modal Animation */
+.modal {
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+    pointer-events: none;
+}
 
-        .task-info {
-            flex-grow: 1;
-        }
+.modal.active {
+    opacity: 1;
+    pointer-events: auto;
+}
 
-        .task-title {
-            font-weight: bold;
-            font-size: 1.1rem;
-            margin-bottom: 5px;
-            display: block;
-        }
-
-        .task-meta {
-            font-size: 0.85rem;
-            color: #666;
-            display: flex;
-            gap: 10px;
-            align-items: center;
-        }
-
-        .badge {
-            padding: 2px 8px;
-            border-radius: 12px;
-            color: white;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            font-weight: bold;
-        }
-
-        /* Dynamic Category Colors */
-        .cat-School { border-color: var(--cat-school); }
-        .badge-School { background-color: var(--cat-school); }
-
-        .cat-Knowledge { border-color: var(--cat-knowledge); }
-        .badge-Knowledge { background-color: var(--cat-knowledge); }
-
-        .cat-Entertainment { border-color: var(--cat-entertainment); }
-        .badge-Entertainment { background-color: var(--cat-entertainment); }
-
-        .cat-Other { border-color: var(--cat-other); }
-        .badge-Other { background-color: var(--cat-other); }
-
-        /* Reminder / Due Today Styles */
-        .due-today {
-            border: 2px solid var(--danger);
-            background-color: #fff0f0;
-        }
-        .due-alert {
-            color: var(--danger);
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        /* Delete Button */
-        .delete-btn {
-            background: none;
-            border: none;
-            color: #ff7675;
-            cursor: pointer;
-            font-size: 1.2rem;
-            margin-left: 10px;
-        }
-        .delete-btn:hover {
-            color: var(--danger);
-        }
+/* Code Block Scroll */
+pre {
+    scrollbar-width: thin;
+    scrollbar-color: #4b5563 #1f2937;
+}
