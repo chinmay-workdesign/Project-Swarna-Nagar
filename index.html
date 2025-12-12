@@ -1933,7 +1933,7 @@ int main() {
 
             // --- Amogh's Problems ---
              "Grid Connectivity": {
-                problem: "We need to physically connect all power substations with high-voltage cables. Copper is expensive, so the goal is to minimize the total length of cable used while keeping the entire grid connected.",
+                problem: "A network of power substations must be connected using underground or overhead transmission cables. Copper and installation costs are high, so the electricity board wants to connect all substations with the minimum total cable length, while ensuring that every station remains reachable from any other. The goal is to design the most cost-efficient infrastructure that avoids unnecessary loops or redundant wiring.",
                 solution: "This is a Minimum Spanning Tree (MST) problem. Prim's Algorithm is efficient for dense graphs. It starts with an arbitrary node and greedily adds the shortest edge connecting a node in the tree to a node outside the tree, ensuring no cycles are formed.",
                 code: `int primMST(vector<vector<pair<int, int>>>& adj, int V) {
     priority_queue<pair<int, int>, ...> pq;
@@ -2477,6 +2477,7 @@ if(activeIncidents.find(id) == activeIncidents.end()) {
     </script>
 </body>
 </html>
+
 
 
 
