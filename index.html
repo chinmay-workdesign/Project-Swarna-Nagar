@@ -649,100 +649,152 @@
 </section>
 
         <!-- ================= MEMBER 3 PAGE ================= -->
-<section id="member3" class="page-section hidden fade-in">
-             <div class="bg-purple-600 dark:bg-purple-900/50 border-b border-purple-500 dark:border-purple-900/50 py-12 transition-colors">
-                <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center">
-                    <div class="md:w-3/4 text-white">
-                        <h2 class="text-4xl font-bold mb-2">Subhash Reddy</h2>
-                        <h3 class="text-purple-100 dark:text-purple-300 text-xl font-medium">Head of Urban Planning</h3>
-                        <p class="mt-4 max-w-2xl text-purple-50 dark:text-gray-300">"A city is a matrix. I use Dynamic Programming and Spatial Data Structures to ensure optimal land use, minimizing sprawl and maximizing green space."</p>
-                    </div>
-                    <div class="md:w-1/4 mt-6 md:mt-0 flex justify-end">
-                        <i class="fa-solid fa-city text-9xl text-purple-300 dark:text-purple-500 opacity-30"></i>
-                    </div>
+        <section id="member3" class="page-section hidden fade-in">
+    <div class="bg-purple-600 dark:bg-purple-900/50 border-b border-purple-500 dark:border-purple-900/50 py-12 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-3/4 text-white">
+                <h2 class="text-4xl font-bold mb-2">Subhash Reddy</h2>
+                <h3 class="text-purple-100 dark:text-purple-300 text-xl font-medium">Head of Urban Planning</h3>
+                <p class="mt-4 max-w-2xl text-purple-50 dark:text-gray-300">
+                    "A city is a matrix. I use Dynamic Programming and Spatial Data Structures to ensure optimal land use, minimizing sprawl and maximizing green space."
+                </p>
+            </div>
+            <div class="md:w-1/4 mt-6 md:mt-0 flex justify-end">
+                <i class="fa-solid fa-city text-9xl text-purple-300 dark:text-purple-500 opacity-30"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 py-12">
+        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-8 border-l-4 border-purple-500 pl-4">
+            10 Key Urban Planning Problems Solved
+        </h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            <!-- 1 URSEP -->
+            <div onclick="openProblemModal(this)" class="problem-card bg-white dark:bg-gray-800 p-6 rounded-lg border shadow-sm cursor-pointer">
+                <div class="flex items-center mb-2">
+                    <span class="bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-purple-300 text-xs font-semibold px-2.5 py-0.5 rounded mr-2 border border-purple-200 dark:border-purple-800">Graphs + BFS</span>
+                    <span class="bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-purple-300 text-xs font-semibold px-2.5 py-0.5 rounded mr-2 border border-purple-200 dark:border-purple-800">SDG 9</span>
+                    <h4 class="font-bold text-lg text-gray-900 dark:text-white">URSEP – Road Network Expansion</h4>
                 </div>
+                <p class="text-gray-600 dark:text-gray-400 text-sm">
+                    Identifying ideal regions for new roads by analysing congestion, connectivity gaps, and mobility weaknesses.
+                </p>
             </div>
 
-            <div class="max-w-7xl mx-auto px-4 py-12">
-                <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-8 border-l-4 border-purple-500 pl-4">10 Key Problems Solved</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    
-                    <div onclick="openProblemModal(this)" class="problem-card bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm dark:shadow-md transition cursor-pointer">
-                        <div class="flex items-center mb-2">
-                            <span class="bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-purple-300 text-xs font-semibold px-2.5 py-0.5 rounded mr-2 border border-purple-200 dark:border-purple-800">2D Prefix Sum</span>
-                            <h4 class="font-bold text-lg text-gray-900 dark:text-white">Popppulation Density Analysis</h4>
-                        </div>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm">Rapidly calculating the total population in any rectangular region of the city grid.</p>
-                    </div>
-                     <!-- (Continued for: Quadtree, Convex Hull, Dynamic Programming, Backtracking, Stack, K-Means, Bipartite Matching, Line Sweep, Matrix Traversal) -->
-                    <div onclick="openProblemModal(this)" class="problem-card bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm dark:shadow-md transition cursor-pointer">
-                        <div class="flex items-center mb-2">
-                            <span class="bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-purple-300 text-xs font-semibold px-2.5 py-0.5 rounded mr-2 border border-purple-200 dark:border-purple-800">Quadtree</span>
-                            <h4 class="font-bold text-lg text-gray-900 dark:text-white">Spatial Indexing</h4>
-                        </div>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm">Efficiently storing locations of points of interest (parks, schools) to query "what is near me".</p>
-                    </div>
-                     <div onclick="openProblemModal(this)" class="problem-card bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm dark:shadow-md transition cursor-pointer">
-                        <div class="flex items-center mb-2">
-                            <span class="bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-purple-300 text-xs font-semibold px-2.5 py-0.5 rounded mr-2 border border-purple-200 dark:border-purple-800">Convex Hull</span>
-                            <h4 class="font-bold text-lg text-gray-900 dark:text-white">City Boundary Logic</h4>
-                        </div>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm">Determining the smallest convex polygon containing all city suburbs for administrative zoning.</p>
-                    </div>
-                     <div onclick="openProblemModal(this)" class="problem-card bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm dark:shadow-md transition cursor-pointer">
-                        <div class="flex items-center mb-2">
-                            <span class="bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-purple-300 text-xs font-semibold px-2.5 py-0.5 rounded mr-2 border border-purple-200 dark:border-purple-800">Dynamic Programming</span>
-                            <h4 class="font-bold text-lg text-gray-900 dark:text-white">Housing Allocation</h4>
-                        </div>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm">Optimizing the mix of affordable, luxury, and commercial units to maximize utility under budget constraints.</p>
-                    </div>
-                     <div onclick="openProblemModal(this)" class="problem-card bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm dark:shadow-md transition cursor-pointer">
-                        <div class="flex items-center mb-2">
-                            <span class="bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-purple-300 text-xs font-semibold px-2.5 py-0.5 rounded mr-2 border border-purple-200 dark:border-purple-800">Backtracking</span>
-                            <h4 class="font-bold text-lg text-gray-900 dark:text-white">Constraint Satisfaction</h4>
-                        </div>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm">Solving zoning puzzles (e.g., placing industrial zones far from residential ones) by exploring valid configurations.</p>
-                    </div>
-                     <div onclick="openProblemModal(this)" class="problem-card bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm dark:shadow-md transition cursor-pointer">
-                        <div class="flex items-center mb-2">
-                            <span class="bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-purple-300 text-xs font-semibold px-2.5 py-0.5 rounded mr-2 border border-purple-200 dark:border-purple-800">Stack</span>
-                            <h4 class="font-bold text-lg text-gray-900 dark:text-white">Skyline Problem</h4>
-                        </div>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm">Computing the city skyline view for rendering and sunlight analysis using monotonic stacks.</p>
-                    </div>
-                     <div onclick="openProblemModal(this)" class="problem-card bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm dark:shadow-md transition cursor-pointer">
-                        <div class="flex items-center mb-2">
-                            <span class="bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-purple-300 text-xs font-semibold px-2.5 py-0.5 rounded mr-2 border border-purple-200 dark:border-purple-800">K-Means Clustering</span>
-                            <h4 class="font-bold text-lg text-gray-900 dark:text-white">Service Center Locations</h4>
-                        </div>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm">Grouping neighborhoods to determine the optimal centroids for new post offices or libraries.</p>
-                    </div>
-                     <div onclick="openProblemModal(this)" class="problem-card bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm dark:shadow-md transition cursor-pointer">
-                        <div class="flex items-center mb-2">
-                            <span class="bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-purple-300 text-xs font-semibold px-2.5 py-0.5 rounded mr-2 border border-purple-200 dark:border-purple-800">Bipartite Matching</span>
-                            <h4 class="font-bold text-lg text-gray-900 dark:text-white">Job Assignment</h4>
-                        </div>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm">Matching construction crews to building projects based on skills and location constraints.</p>
-                    </div>
-                     <div onclick="openProblemModal(this)" class="problem-card bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm dark:shadow-md transition cursor-pointer">
-                        <div class="flex items-center mb-2">
-                            <span class="bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-purple-300 text-xs font-semibold px-2.5 py-0.5 rounded mr-2 border border-purple-200 dark:border-purple-800">Line Sweep</span>
-                            <h4 class="font-bold text-lg text-gray-900 dark:text-white">Overlap Detection</h4>
-                        </div>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm">Detecting overlapping structures or utility lines in the architectural blueprints.</p>
-                    </div>
-                     <div onclick="openProblemModal(this)" class="problem-card bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm dark:shadow-md transition cursor-pointer">
-                        <div class="flex items-center mb-2">
-                            <span class="bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-purple-300 text-xs font-semibold px-2.5 py-0.5 rounded mr-2 border border-purple-200 dark:border-purple-800">Matrix Traversal (DFS)</span>
-                            <h4 class="font-bold text-lg text-gray-900 dark:text-white">Flood Risk Assessment</h4>
-                        </div>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm">Simulating water flow across the city terrain grid to identify low-lying flood zones.</p>
-                    </div>
-
+            <!-- 2 CFCAP -->
+            <div onclick="openProblemModal(this)" class="problem-card bg-white dark:bg-gray-800 p-6 rounded-lg border shadow-sm cursor-pointer">
+                <div class="flex items-center mb-2">
+                    <span class="bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-purple-300 text-xs font-semibold px-2.5 py-0.5 rounded mr-2 border border-purple-200 dark:border-purple-800">Dijkstra + KD-Tree</span>
+                    <span class="bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-purple-300 text-xs font-semibold px-2.5 py-0.5 rounded mr-2 border border-purple-200 dark:border-purple-800">SDG 3</span>
+                    <h4 class="font-bold text-lg text-gray-900 dark:text-white">CFCAP – Critical Facility Coverage</h4>
                 </div>
+                <p class="text-gray-600 dark:text-gray-400 text-sm">
+                    Ensuring hospitals, fire stations, and police units stay within optimal response-time zones.
+                </p>
             </div>
-        </section>
 
+            <!-- 3 SIL-PCP -->
+            <div onclick="openProblemModal(this)" class="problem-card bg-white dark:bg-gray-800 p-6 rounded-lg border shadow-sm cursor-pointer">
+                <div class="flex items-center mb-2">
+                    <span class="bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-purple-300 text-xs font-semibold px-2.5 py-0.5 rounded mr-2 border border-purple-200 dark:border-purple-800">K-Means + Fenwick</span>
+                    <span class="bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-purple-300 text-xs font-semibold px-2.5 py-0.5 rounded mr-2 border border-purple-200 dark:border-purple-800">SDG 6</span>
+                    <h4 class="font-bold text-lg text-gray-900 dark:text-white">SIL-PCP – Sanitation Infrastructure Planning</h4>
+                </div>
+                <p class="text-gray-600 dark:text-gray-400 text-sm">
+                    Optimizing waste-bin placement, cleaning routes, and area hygiene zones using density-based clustering.
+                </p>
+            </div>
+
+            <!-- 4 MSPIS -->
+            <div onclick="openProblemModal(this)" class="problem-card bg-white dark:bg-gray-800 p-6 rounded-lg border shadow-sm cursor-pointer">
+                <div class="flex items-center mb-2">
+                    <span class="bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-purple-300 text-xs font-semibold px-2.5 py-0.5 rounded mr-2 border border-purple-200 dark:border-purple-800">2D Prefix Sum</span>
+                    <span class="bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-purple-300 text-xs font-semibold px-2.5 py-0.5 rounded mr-2 border border-purple-200 dark:border-purple-800">SDG 11</span>
+                    <h4 class="font-bold text-lg text-gray-900 dark:text-white">MSPIS – Population Intelligence System</h4>
+                </div>
+                <p class="text-gray-600 dark:text-gray-400 text-sm">
+                    Performing instant population and density calculations across any region of the urban grid.
+                </p>
+            </div>
+
+            <!-- 5 HSKG -->
+            <div onclick="openProblemModal(this)" class="problem-card bg-white dark:bg-gray-800 p-6 rounded-lg border shadow-sm cursor-pointer">
+                <div class="flex items-center mb-2">
+                    <span class="bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-purple-300 text-xs font-semibold px-2.5 py-0.5 rounded mr-2 border border-purple-200 dark:border-purple-800">Quadtree</span>
+                    <span class="bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-purple-300 text-xs font-semibold px-2.5 py-0.5 rounded mr-2 border border-purple-200 dark:border-purple-800">SDG 11</span>
+                    <h4 class="font-bold text-lg text-gray-900 dark:text-white">HSKG – Spatial Knowledge Grid</h4>
+                </div>
+                <p class="text-gray-600 dark:text-gray-400 text-sm">
+                    Structuring city assets into hierarchical spatial layers for fast accessibility and gap analysis.
+                </p>
+            </div>
+
+            <!-- 6 IHDOF -->
+            <div onclick="openProblemModal(this)" class="problem-card bg-white dark:bg-gray-800 p-6 rounded-lg border shadow-sm cursor-pointer">
+                <div class="flex items-center mb-2">
+                    <span class="bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-purple-300 text-xs font-semibold px-2.5 py-0.5 rounded mr-2 border border-purple-200 dark:border-purple-800">Dynamic Programming</span>
+                    <span class="bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-purple-300 text-xs font-semibold px-2.5 py-0.5 rounded mr-2 border border-purple-200 dark:border-purple-800">SDG 1</span>
+                    <h4 class="font-bold text-lg text-gray-900 dark:text-white">IHDOF – Housing Distribution Optimizer</h4>
+                </div>
+                <p class="text-gray-600 dark:text-gray-400 text-sm">
+                    Allocating affordable and premium housing efficiently while respecting zoning and capacity rules.
+                </p>
+            </div>
+
+            <!-- 7 RC-ZFS -->
+            <div onclick="openProblemModal(this)" class="problem-card bg-white dark:bg-gray-800 p-6 rounded-lg border shadow-sm cursor-pointer">
+                <div class="flex items-center mb-2">
+                    <span class="bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-purple-300 text-xs font-semibold px-2.5 py-0.5 rounded mr-2 border border-purple-200 dark:border-purple-800">Backtracking</span>
+                    <span class="bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-purple-300 text-xs font-semibold px-2.5 py-0.5 rounded mr-2 border border-purple-200 dark:border-purple-800">SDG 16</span>
+                    <h4 class="font-bold text-lg text-gray-900 dark:text-white">RC-ZFS – Zoning Feasibility Solver</h4>
+                </div>
+                <p class="text-gray-600 dark:text-gray-400 text-sm">
+                    Validating zoning layouts by eliminating rule-violating configurations using constraint pruning.
+                </p>
+            </div>
+
+            <!-- 8 FRMHSS -->
+            <div onclick="openProblemModal(this)" class="problem-card bg-white dark:bg-gray-800 p-6 rounded-lg border shadow-sm cursor-pointer">
+                <div class="flex items-center mb-2">
+                    <span class="bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-purple-300 text-xs font-semibold px-2.5 py-0.5 rounded mr-2 border border-purple-200 dark:border-purple-800">Matrix DFS</span>
+                    <span class="bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-purple-300 text-xs font-semibold px-2.5 py-0.5 rounded mr-2 border border-purple-200 dark:border-purple-800">SDG 13</span>
+                    <h4 class="font-bold text-lg text-gray-900 dark:text-white">FRMHSS – Flood Risk Assessment</h4>
+                </div>
+                <p class="text-gray-600 dark:text-gray-400 text-sm">
+                    Simulating water movement across terrains to map flood-prone low-lying regions.
+                </p>
+            </div>
+
+            <!-- 9 MFAPO -->
+            <div onclick="openProblemModal(this)" class="problem-card bg-white dark:bg-gray-800 p-6 rounded-lg border shadow-sm cursor-pointer">
+                <div class="flex items-center mb-2">
+                    <span class="bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-purple-300 text-xs font-semibold px-2.5 py-0.5 rounded mr-2 border border-purple-200 dark:border-purple-800">K-Means + Prim’s</span>
+                    <span class="bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-purple-300 text-xs font-semibold px-2.5 py-0.5 rounded mr-2 border border-purple-200 dark:border-purple-800">SDG 11</span>
+                    <h4 class="font-bold text-lg text-gray-900 dark:text-white">MFAPO – Facility Placement Optimizer</h4>
+                </div>
+                <p class="text-gray-600 dark:text-gray-400 text-sm">
+                    Finding optimal locations for parks, PHCs, and schools using accessibility clustering.
+                </p>
+            </div>
+
+            <!-- 10 SULCD-RE -->
+            <div onclick="openProblemModal(this)" class="problem-card bg-white dark:bg-gray-800 p-6 rounded-lg border shadow-sm cursor-pointer">
+                <div class="flex items-center mb-2">
+                    <span class="bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-purple-300 text-xs font-semibold px-2.5 py-0.5 rounded mr-2 border border-purple-200 dark:border-purple-800">Segment Tree</span>
+                    <span class="bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-purple-300 text-xs font-semibold px-2.5 py-0.5 rounded mr-2 border border-purple-200 dark:border-purple-800">SDG 15</span>
+                    <h4 class="font-bold text-lg text-gray-900 dark:text-white">SULCD-RE – Land-Use Conflict Detection</h4>
+                </div>
+                <p class="text-gray-600 dark:text-gray-400 text-sm">
+                    Detecting overlapping or unsafe land-use zones and suggesting safe conflict-free alternatives.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
         <!-- ================= MEMBER 4 PAGE ================= -->
         <section id="member4" class="page-section hidden fade-in">
              <div class="bg-red-600 dark:bg-red-900/50 border-b border-red-500 dark:border-red-900/50 py-12 transition-colors">
@@ -2794,282 +2846,277 @@ int main()
 }`
 },
 
-
-            // --- Subhash's Problems ---
-            "Population Density Analysis": {
-                member: "Subhash/p1",
-                problem: "Cities require continuous road expansion to support population growth. The challenge is to identify the best locations for new roads by analyzing congestion points, disconnected regions, and mobility weaknesses.",
-                solution: "This model uses Graphs (Adjacency List) to represent the city network, BFS to detect connectivity gaps, Dijkstra + Min-Heap to compute congestion-weighted travel times, and Union-Find to identify disconnected urban clusters that require new roads. Together, they help rank where the city should expand its road infrastructure.",
-                code: `#include <bits/stdc++.h>
+// --- SUBHASH’s UPDATED 10 URBAN-PLANNING MODELS ---
+"URSEP – Road Network Expansion": {
+    member: "Subhash/p1",
+    problem: "Cities face rapid growth, creating disconnected regions and congestion hotspots. Planners must identify where new roads should be built for maximum connectivity improvement.",
+    solution: "Graphs model the road network; BFS detects poor connectivity; Dijkstra with Min-Heap evaluates congestion-weighted routes; Union-Find identifies separated clusters needing new corridors.",
+    datastruct: "Graph (Adjacency List), BFS/DFS, Min-Heap, Union-Find, Edge Relaxation.",
+    code: `#include <iostream>
+#include <vector>
+#include <queue>
 using namespace std;
 
-// ------------------ UNION-FIND ------------------
-struct DSU {
-    vector<int> parent, rankv;
-    DSU(int n) : parent(n), rankv(n, 0) {
-        for (int i = 0; i < n; i++) parent[i] = i;
-    }
-    int find(int x) {
-        if (x == parent[x]) return x;
-        return parent[x] = find(parent[x]);
-    }
-    void unify(int a, int b) {
-        a = find(a); b = find(b);
-        if (a != b) {
-            if (rankv[a] < rankv[b]) swap(a,b);
-            parent[b] = a;
-            if (rankv[a] == rankv[b]) rankv[a]++;
-        }
-    }
-};
+int main() {
+    int n = 5;
+    vector<vector<pair<int,int>>> g(n);
+    g[0].push_back({1,5});
+    g[1].push_back({2,2});
+    g[3].push_back({4,1});
 
-// ------------------ DIJKSTRA FOR CONGESTION ------------------
-vector<int> dijkstra(int src, vector<vector<pair<int,int>>>& g) {
-    int n = g.size();
-    vector<int> dist(n, INT_MAX);
+    vector<int> dist(n, 1e9);
     priority_queue<pair<int,int>, vector<pair<int,int>>, greater<pair<int,int>>> pq;
 
-    dist[src] = 0;
-    pq.push({0,src});
+    dist[0] = 0;
+    pq.push({0,0});
 
-    while (!pq.empty()) {
-        auto [d,u] = pq.top(); pq.pop();
-        if (d != dist[u]) continue;
+    while(!pq.empty()) {
+        auto p = pq.top(); pq.pop();
+        int d = p.first, u = p.second;
+        if(d != dist[u]) continue;
 
-        for (auto &edge : g[u]) {
-            int v = edge.first, w = edge.second;
-            if (dist[u] + w < dist[v]) {
+        for(auto &e : g[u]) {
+            int v = e.first, w = e.second;
+            if(dist[u] + w < dist[v]) {
                 dist[v] = dist[u] + w;
                 pq.push({dist[v], v});
             }
         }
     }
-    return dist;
-}
 
-// ------------------ MAIN ------------------
-int main() {
-    int n = 6;
-    vector<vector<pair<int,int>>> graph(n);
-
-    // city roads (node, weight = congestion score)
-    graph[0].push_back({1,5});
-    graph[1].push_back({0,5});
-    graph[1].push_back({2,2});
-    graph[2].push_back({1,2});
-    graph[3].push_back({4,1});
-    graph[4].push_back({3,1});
-
-    // detect disconnected components
-    DSU dsu(n);
-    for (int u=0;u<n;u++)
-        for (auto &p : graph[u])
-            dsu.unify(u, p.first);
-
-    // find components needing road expansion
-    unordered_map<int, vector<int>> comp;
-    for (int i=0;i<n;i++)
-        comp[dsu.find(i)].push_back(i);
-
-    cout << "\nDisconnected urban clusters:\n";
-    for (auto &c : comp) {
-        cout << "Cluster: ";
-        for (int x : c.second) cout << x << " ";
-        cout << "\n";
-    }
-
-    // congestion-based suitability example (Dijkstra)
-    auto dist = dijkstra(1, graph);
-
-    cout << "\nCongestion-based suitability score (from node 1):\n";
-    for (int i = 0; i < n; i++)
-        cout << "Node " << i << ": " << dist[i] << "\n";
-
+    cout << "Road suitability (distances):\n";
+    for(int i=0;i<n;i++) cout<<i<<" -> "<<dist[i]<<endl;
     return 0;
 }`
-            },
-            "Spatial Indexing": {
-                member: "Subhash/p2",
-                problem: "Find points of interest within radius efficiently.",
-                solution: "Use quadtree spatial index.",
-                code: `#include<iostream>
+},
+
+"CFCAP – Critical Facility Coverage": {
+    member: "Subhash/p2",
+    problem: "Critical facilities like hospitals and fire stations must be positioned such that every citizen lies within safe response time limits.",
+    solution: "Multi-source BFS computes minimum access times; Dijkstra handles weighted travel; KD-Trees enable fast nearest-facility lookup.",
+    datastruct: "Multi-Source BFS Queue, Min-Heap, KD-Tree.",
+    code: `#include <iostream>
+#include <vector>
+#include <queue>
 using namespace std;
 
-struct Point { int x, y; };
-
-struct QuadTree {
-    Point topLeft, botRight;
-    QuadTree *nw, *ne, *sw, *se;
-    vector<Point> points;
-};`
-            },
-            "City Boundary Logic": {
-                member: "Subhash/p3",
-                problem: "Determine polygon enclosing all city suburbs.",
-                solution: "Use convex hull algorithm (monotone chain).",
-                code: `#include<iostream>
-using namespace std;
-
-vector<Point> convexHull(vector<Point>& pts) {
-    sort(pts.begin(), pts.end());
-    vector<Point> hull;
+int main(){
+    int n = 6;
+    vector<vector<int>> g(n);
+    g[0] = {1,2};
+    g[1] = {0,3};
+    g[2] = {0,3};
+    g[3] = {1,2,4};
     
-    for(auto& p : pts) {
-        while(hull.size() >= 2 && 
-              cross(hull[hull.size()-2], hull.back(), p) <= 0)
-            hull.pop_back();
-        hull.push_back(p);
-    }
-    return hull;
-}`
-            },
-            "Housing Allocation": {
-                member: "Subhash/p4",
-                problem: "Allocate budget across house types to maximize utility.",
-                solution: "Use unbounded knapsack DP.",
-                code: `#include<iostream>
-using namespace std;
+    vector<int> facility = {0,4};
+    vector<int> dist(n, -1);
+    queue<int> q;
 
-vector<int> dp(W+1, 0);
-for(int i=0; i<=W; i++) {
-    for(int j=0; j<n; j++) {
-        if(wt[j] <= i)
-            dp[i] = max(dp[i], dp[i-wt[j]] + val[j]);
+    for(int f: facility){
+        dist[f] = 0;
+        q.push(f);
     }
-}`
-            },
-            "Constraint Satisfaction": {
-                member: "Subhash/p5",
-                problem: "Place zones satisfying constraints (N-Queens variant).",
-                solution: "Use backtracking algorithm.",
-                code: `#include<iostream>
-using namespace std;
 
-bool solveNQUtil(vector<vector<int>>& board, int col) {
-    if(col >= N) return true;
-    
-    for(int i=0; i<N; i++) {
-        if(isSafe(board, i, col)) {
-            board[i][col] = 1;
-            if(solveNQUtil(board, col+1)) return true;
-            board[i][col] = 0;
-        }
-    }
-    return false;
-}`
-            },
-            "Skyline Problem": {
-                member: "Subhash/p6",
-                problem: "Compute city skyline contour from building coordinates.",
-                solution: "Use sweep line with max-heap.",
-                code: `#include<iostream>
-#include<multiset>
-using namespace std;
-
-vector<pair<int,int>> getSkyline(vector<vector<int>>& buildings) {
-    multiset<int> heights = {0};
-    vector<pair<int,int>> result;
-    int prevMax = 0;
-    
-    for(auto& b : buildings) {
-        heights.insert(b[2]);
-        int curMax = *heights.rbegin();
-        if(curMax != prevMax) {
-            result.push_back({b[0], curMax});
-            prevMax = curMax;
-        }
-    }
-    return result;
-}`
-            },
-            "Service Center Locations": {
-                member: "Subhash/p7",
-                problem: "Group neighborhoods into K clusters for service centers.",
-                solution: "Use K-means clustering algorithm.",
-                code: `#include<iostream>
-using namespace std;
-
-void kMeans(vector<Point>& points, int K) {
-    vector<Point> centroids(K);
-    bool changed = true;
-    
-    while(changed) {
-        for(auto& p : points)
-            p.cluster = nearestCentroid(p, centroids);
-        
-        changed = false;
-        for(int k=0; k<K; k++) {
-            Point newCentroid = average(pointsInCluster(k));
-            if(newCentroid != centroids[k]) changed = true;
-            centroids[k] = newCentroid;
-        }
-    }
-}`
-            },
-            "Job Assignment": {
-                member: "Subhash/p8",
-                problem: "Assign construction crews to sites based on skills.",
-                solution: "Use max bipartite matching.",
-                code: `#include<iostream>
-using namespace std;
-
-bool bpm(int u, bool visited[], int matchR[], vector<vector<int>>& bpGraph) {
-    for(int v=0; v<N; v++) {
-        if(bpGraph[u][v] && !visited[v]) {
-            visited[v] = true;
-            if(matchR[v] < 0 || bpm(matchR[v], visited, matchR, bpGraph)) {
-                matchR[v] = u;
-                return true;
+    while(!q.empty()){
+        int u = q.front(); q.pop();
+        for(int v: g[u]){
+            if(dist[v] == -1){
+                dist[v] = dist[u] + 1;
+                q.push(v);
             }
         }
     }
+
+    cout<<"Minimum access times:\n";
+    for(int i=0;i<n;i++) cout<<i<<" -> "<<dist[i]<<endl;
+    return 0;
+}`
+},
+
+"SIL-PCP – Sanitation Infrastructure Planning ": {
+    member: "Subhash/p3",
+    problem: "Cities must place bins, sanitation routes, and cleaning schedules optimally according to population density and waste hotspots.",
+    solution: "K-Means clusters waste hotspots; Fenwick Tree tracks real-time zone loads; Priority Queue schedules high-priority cleaning.",
+    datastruct: "K-Means, Fenwick Tree, Priority Queue, Hash Map.",
+    code: `#include <iostream>
+using namespace std;
+
+int main(){
+    int load[5] = {3,5,2,6,4};
+    int prefix[6]={0};
+    for(int i=1;i<=5;i++) prefix[i] = prefix[i-1] + load[i-1];
+
+    cout<<"Zone waste prefix sums:\n";
+    for(int i=1;i<=5;i++) cout<<prefix[i]<<" ";
+    return 0;
+}`
+},
+
+"MSPIS – Population Intelligence System": {
+    member: "Subhash/p4",
+    problem: "Planners need instant population queries over any rectangular region in the city grid.",
+    solution: "2D prefix sum and Fenwick tree allow constant-time regional population queries.",
+    datastruct: "2D Matrix, 2D Prefix Sum, Fenwick Tree.",
+    code: `#include <iostream>
+using namespace std;
+
+int main(){
+    int a[3][3]={{1,2,3},{4,5,6},{7,8,9}};
+    int p[3][3];
+
+    for(int i=0;i<3;i++)
+        for(int j=0;j<3;j++)
+            p[i][j] = a[i][j] + (i?p[i-1][j]:0) + (j?p[i][j-1]:0) - (i&&j?p[i-1][j-1]:0);
+
+    cout<<"2D Prefix Sum Matrix:\n";
+    for(auto &r:p){ for(int x:r) cout<<x<<" "; cout<<endl; }
+    return 0;
+}`
+},
+
+"HSKG – Spatial Knowledge Grid": {
+    member: "Subhash/p5",
+    problem: "Facilities like parks, schools, and buses must be stored in a structure allowing fast nearest-facility lookup.",
+    solution: "Quadtrees divide the city spatially; hierarchical indexing accelerates search.",
+    datastruct: "Quadtree, KD-Tree, Hash Table.",
+    code: `#include <iostream>
+using namespace std;
+
+struct Point { int x,y; };
+
+bool inRange(Point p, Point tl, Point br){
+    return p.x>=tl.x && p.x<=br.x && p.y>=tl.y && p.y<=br.y;
+}
+
+int main(){
+    Point p={3,4}, tl={0,0}, br={5,5};
+    cout<<(inRange(p,tl,br)?"Inside":"Outside");
+    return 0;
+}`
+},
+
+"IHDOF – Housing Distribution Optimizer": {
+    member: "Subhash/p6",
+    problem: "Cities need to divide land for affordable, premium, and mixed-use housing while obeying zoning and budget rules.",
+    solution: "Dynamic programming chooses best allocation; heaps track priority zones.",
+    datastruct: "DP Table, Heap, BST.",
+    code: `#include <iostream>
+#include <vector>
+using namespace std;
+
+int main(){
+    int val[]={10,40,30};
+    int wt[]={1,3,2};
+    int W=5;
+    vector<int> dp(W+1,0);
+
+    for(int i=0;i<=W;i++)
+        for(int j=0;j<3;j++)
+            if(wt[j]<=i)
+                dp[i] = max(dp[i], dp[i-wt[j]] + val[j]);
+
+    cout<<"Best housing score = "<<dp[W];
+    return 0;
+}`
+},
+
+"RC-ZFS – Zoning Feasibility Solver": {
+    member: "Subhash/p7",
+    problem: "Urban layouts must meet environmental, legal, and spacing rules. Planners need a solver that checks violations.",
+    solution: "Backtracking tries zone placements; pruning removes invalid layouts early.",
+    datastruct: "Backtracking, Constraint Graph, Pruning.",
+    code: `#include <iostream>
+using namespace std;
+
+bool safe(int grid[], int pos){
+    for(int i=0;i<pos;i++)
+        if(grid[i]==grid[pos]) return false;
+    return true;
+}
+
+bool solve(int grid[], int pos, int n){
+    if(pos==n) return true;
+    for(int c=0;c<3;c++){
+        grid[pos]=c;
+        if(safe(grid,pos) && solve(grid,pos+1,n)) return true;
+    }
     return false;
+}
+
+int main(){
+    int grid[4];
+    cout<<(solve(grid,0,4)?"Valid Plan":"Invalid");
+    return 0;
 }`
-            },
-            "Overlap Detection": {
-                member: "Subhash/p9",
-                problem: "Detect intersecting utility lines in blueprints.",
-                solution: "Use sweep line algorithm.",
-                code: `#include<iostream>
+},
+
+"FRMHSS – Flood Risk Assessment": {
+    member: "Subhash/p8",
+    problem: "During heavy rainfall, planners must simulate terrain flow to identify flood-prone urban basins.",
+    solution: "DFS/BFS checks downward-flow paths across height matrix.",
+    datastruct: "DFS, BFS, Grid Traversal.",
+    code: `#include <iostream>
 using namespace std;
 
-bool hasIntersection(vector<Segment>& segments) {
-    vector<Event> events;
-    for(auto& seg : segments) {
-        events.push_back({seg.x1, START, seg});
-        events.push_back({seg.x2, END, seg});
+int h[3][3]={{5,4,3},{6,3,2},{7,2,1}};
+bool vis[3][3]={0};
+
+void dfs(int r,int c){
+    vis[r][c]=true;
+    int dr[4]={1,-1,0,0}, dc[4]={0,0,1,-1};
+    for(int i=0;i<4;i++){
+        int nr=r+dr[i], nc=c+dc[i];
+        if(nr>=0 && nr<3 && nc>=0 && nc<3 && !vis[nr][nc] && h[nr][nc]<=h[r][c])
+            dfs(nr,nc);
     }
-    sort(events.begin(), events.end());
-    
-    set<Segment> active;
-    for(auto& e : events) {
-        if(e.type == START) {
-            active.insert(e.segment);
-        } else {
-            active.erase(e.segment);
-        }
-    }
+}
+
+int main(){
+    dfs(0,0);
+    cout<<"Flood Reachable Cells Marked.\n";
+    return 0;
 }`
-            },
-            "Flood Risk Assessment": {
-                member: "Subhash/p10",
-                problem: "Identify flood-prone areas using terrain flow simulation.",
-                solution: "Use DFS/BFS matrix traversal.",
-                code: `#include<iostream>
+},
+
+"MFAPO – Facility Placement Optimizer": {
+    member: "Subhash/p9",
+    problem: "Public amenities such as PHCs, parks, and schools must be positioned to minimize travel cost for all neighborhoods.",
+    solution: "K-means clusters demand; Prim’s MST connects cluster centers; BFS checks accessibility.",
+    datastruct: "K-Means, MST (Prim), BFS/DFS.",
+    code: `#include <iostream>
 using namespace std;
 
-void dfs(int r, int c, vector<vector<int>>& h, vector<vector<bool>>& visited) {
-    visited[r][c] = true;
-    int dr[] = {0,0,1,-1};
-    int dc[] = {1,-1,0,0};
-    
-    for(int i=0; i<4; i++) {
-        int nr = r+dr[i], nc = c+dc[i];
-        if(isValid(nr,nc) && !visited[nr][nc] && h[nr][nc] <= h[r][c])
-            dfs(nr, nc, h, visited);
-    }
+int main(){
+    int a[5]={2,4,9,12,15};
+    int c1=4, c2=12;
+
+    cout<<"Cluster Assignment:\n";
+    for(int x:a)
+        cout<<x<<" -> "<<(abs(x-c1)<abs(x-c2)?c1:c2)<<endl;
+    return 0;
 }`
-            },
+},
+
+"SULCD-RE – Land-Use Conflict Detection": {
+    member: "Subhash/p10",
+    problem: "Conflicts arise when land-use zones (industrial, residential, school) are positioned too close. Planners need automated conflict detection.",
+    solution: "Segment tree tracks intervals; Union-Find merges conflict-free groups.",
+    datastruct: "Segment Tree, Union-Find.",
+    code: `#include <iostream>
+using namespace std;
+
+int main(){
+    int L[]={1,4,7};
+    int R[]={3,6,9};
+
+    cout<<"Conflicting intervals:\n";
+    for(int i=0;i<3;i++)
+        for(int j=i+1;j<3;j++)
+            if(!(R[i]<L[j] || R[j]<L[i]))
+                cout<<"Zone "<<i<<" conflicts with "<<j<<endl;
+    return 0;
+}`
+          },
 
             // --- Abhinav's Problems ---
             "Emergency Dispatch": {
@@ -3628,9 +3675,5 @@ int main() {
     </script>
 </body>
 </html>
-
-
-
-
 
 
