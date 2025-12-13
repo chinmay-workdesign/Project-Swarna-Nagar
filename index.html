@@ -2798,13 +2798,94 @@ int main()
             // --- Subhash's Problems ---
             "Population Density Analysis": {
                 member: "Subhash/p1",
-                problem: "Calculate population in rectangular city regions efficiently.",
-                solution: "Use 2D prefix sums for O(1) range queries.",
-                code: `#include<iostream>
+                problem: "Cities require continuous road expansion to support population growth. The challenge is to identify the best locations for new roads by analyzing congestion points, disconnected regions, and mobility weaknesses.",
+                solution: "This model uses Graphs (Adjacency List) to represent the city network, BFS to detect connectivity gaps, Dijkstra + Min-Heap to compute congestion-weighted travel times, and Union-Find to identify disconnected urban clusters that require new roads. Together, they help rank where the city should expand its road infrastructure.",
+                code: `#include <bits/stdc++.h>
 using namespace std;
 
-int rangeSum(vector<vector<int>>& P, int x1, int y1, int x2, int y2) {
-    return P[x2][y2] - P[x1-1][y2] - P[x2][y1-1] + P[x1-1][y1-1];
+// ------------------ UNION-FIND ------------------
+struct DSU {
+    vector<int> parent, rankv;
+    DSU(int n) : parent(n), rankv(n, 0) {
+        for (int i = 0; i < n; i++) parent[i] = i;
+    }
+    int find(int x) {
+        if (x == parent[x]) return x;
+        return parent[x] = find(parent[x]);
+    }
+    void unify(int a, int b) {
+        a = find(a); b = find(b);
+        if (a != b) {
+            if (rankv[a] < rankv[b]) swap(a,b);
+            parent[b] = a;
+            if (rankv[a] == rankv[b]) rankv[a]++;
+        }
+    }
+};
+
+// ------------------ DIJKSTRA FOR CONGESTION ------------------
+vector<int> dijkstra(int src, vector<vector<pair<int,int>>>& g) {
+    int n = g.size();
+    vector<int> dist(n, INT_MAX);
+    priority_queue<pair<int,int>, vector<pair<int,int>>, greater<pair<int,int>>> pq;
+
+    dist[src] = 0;
+    pq.push({0,src});
+
+    while (!pq.empty()) {
+        auto [d,u] = pq.top(); pq.pop();
+        if (d != dist[u]) continue;
+
+        for (auto &edge : g[u]) {
+            int v = edge.first, w = edge.second;
+            if (dist[u] + w < dist[v]) {
+                dist[v] = dist[u] + w;
+                pq.push({dist[v], v});
+            }
+        }
+    }
+    return dist;
+}
+
+// ------------------ MAIN ------------------
+int main() {
+    int n = 6;
+    vector<vector<pair<int,int>>> graph(n);
+
+    // city roads (node, weight = congestion score)
+    graph[0].push_back({1,5});
+    graph[1].push_back({0,5});
+    graph[1].push_back({2,2});
+    graph[2].push_back({1,2});
+    graph[3].push_back({4,1});
+    graph[4].push_back({3,1});
+
+    // detect disconnected components
+    DSU dsu(n);
+    for (int u=0;u<n;u++)
+        for (auto &p : graph[u])
+            dsu.unify(u, p.first);
+
+    // find components needing road expansion
+    unordered_map<int, vector<int>> comp;
+    for (int i=0;i<n;i++)
+        comp[dsu.find(i)].push_back(i);
+
+    cout << "\nDisconnected urban clusters:\n";
+    for (auto &c : comp) {
+        cout << "Cluster: ";
+        for (int x : c.second) cout << x << " ";
+        cout << "\n";
+    }
+
+    // congestion-based suitability example (Dijkstra)
+    auto dist = dijkstra(1, graph);
+
+    cout << "\nCongestion-based suitability score (from node 1):\n";
+    for (int i = 0; i < n; i++)
+        cout << "Node " << i << ": " << dist[i] << "\n";
+
+    return 0;
 }`
             },
             "Spatial Indexing": {
@@ -3547,6 +3628,7 @@ int main() {
     </script>
 </body>
 </html>
+
 
 
 
