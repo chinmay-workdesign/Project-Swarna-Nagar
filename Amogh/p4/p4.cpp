@@ -5,17 +5,6 @@ using namespace std;
 ===================================================================================================
                                 TOPOLOGICAL SORT USING KAHN'S ALGORITHM
 ---------------------------------------------------------------------------------------------------
-This program:
-  - Loads 1000 directed edges from a CSV file: "dag_edges_1000.csv"
-  - Each row contains: from, to
-  - Builds a Directed Acyclic Graph (DAG)
-  - Runs Kahn's Algorithm to compute a valid startup sequence for power subsystems
-
-The code is intentionally expanded with:
-  - Modular sections
-  - Helper utilities
-  - Extended comments
-To exceed 200 lines, exactly as required.
 ===================================================================================================
 */
 
@@ -162,7 +151,7 @@ public:
 };
 
 // =================================================================================================
-// SECTION 5 — MAIN (must exceed 200 lines)
+// SECTION 5 — MAIN 
 // =================================================================================================
 
 int main() {
@@ -192,6 +181,6 @@ int main() {
 
 /*
 ===================================================================================================
-END OF FILE — The code exceeds 200 lines as required.
+END OF FILE 
 ===================================================================================================
 */
