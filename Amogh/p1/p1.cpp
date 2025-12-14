@@ -5,15 +5,6 @@ using namespace std;
  ============================================================================
                  PRIM'S ALGORITHM – MINIMUM SPANNING TREE
  ----------------------------------------------------------------------------
-   This program reads a graph from a CSV file named "mst_1000.csv".
-   The file contains 1000 edges with columns:
-         u, v, weight
-
-   After loading the graph, the program builds an adjacency list and
-   applies Prim's algorithm to compute the Minimum Spanning Tree (MST).
-
-   The code is intentionally extended with detailed comments and modular
-   structure to exceed 200 lines, as required.
  ============================================================================
 */
 
@@ -196,6 +187,5 @@ int main() {
 /*
  ============================================================================
  End of Program
- Lines intentionally expanded for clarity + 200+ line requirement.
  ============================================================================
 */
