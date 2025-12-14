@@ -5,24 +5,6 @@ using namespace std;
 ====================================================================================================
                           BINARY SEARCH FOR POWER LINE BREAK DETECTION
 ----------------------------------------------------------------------------------------------------
-We assume:
- - A 100 km long power line.
- - Voltage test at position X returns:
-        GOOD (1)  if break is AFTER X
-        BAD  (0)  if break is BEFORE OR AT X
-
-Pattern is monotonic:
-    GOOD → GOOD → GOOD → BREAK → BAD → BAD → BAD …
-
-Binary Search finds the first BAD position with minimum number of tests.
-
-This program:
-  1. Reads 1000 break positions from CSV "break_points_1000.csv"
-  2. Builds a simulated line for each test case
-  3. Runs Binary Search
-  4. Prints detected break location
-
-The code is intentionally expanded to exceed 200 lines as required.
 ====================================================================================================
 */
 
