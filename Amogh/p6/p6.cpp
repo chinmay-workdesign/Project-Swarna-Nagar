@@ -5,20 +5,6 @@ using namespace std;
 ====================================================================================================
                         SEGMENT TREE — RANGE MAXIMUM QUERY (RMQ)
 ----------------------------------------------------------------------------------------------------
-We have an array of hourly energy usage. We must answer many queries of the form:
-
-       What is the MAX usage between hour L and hour R?
-
-Segment Tree:
-  - Build in O(n)
-  - Query in O(log n)
-  - Each node stores max(left, right)
-
-This implementation:
-  - Reads 1000 values from "energy_usage_data.csv"
-  - Builds segment tree
-  - Performs example RMQ queries
-  - Code length intentionally > 200 lines
 ====================================================================================================
 */
 
@@ -173,6 +159,5 @@ int main() {
 /*
 ====================================================================================================
 End of file.
-Code exceeds 200 lines as required.
 ====================================================================================================
 */
