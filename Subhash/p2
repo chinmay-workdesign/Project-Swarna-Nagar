@@ -1,1 +1,134 @@
+#include <iostream>
+#include <vector>
+#include <queue>
+#include <cmath>
+#include <climits>
+using namespace std;
+
+/* =========================================================
+   PART 1: MULTI-SOURCE BFS
+   Purpose: Minimum access time (number of roads) from
+            nearest hospital / fire station
+   ========================================================= */
+
+void multiSourceBFS() {
+    int n = 6;
+    vector<vector<int>> graph(n);
+
+    graph[0] = {1,2};
+    graph[1] = {0,3};
+    graph[2] = {0,3};
+    graph[3] = {1,2,4};
+    graph[4] = {3,5};
+    graph[5] = {4};
+
+    vector<int> facilities = {0,4};   // hospitals / fire stations
+    vector<int> dist(n, -1);
+    queue<int> q;
+
+    for (int f : facilities) {
+        dist[f] = 0;
+        q.push(f);
+    }
+
+    while (!q.empty()) {
+        int u = q.front(); q.pop();
+        for (int v : graph[u]) {
+            if (dist[v] == -1) {
+                dist[v] = dist[u] + 1;
+                q.push(v);
+            }
+        }
+    }
+
+    cout << "\n--- Multi-Source BFS Access Times ---\n";
+    for (int i = 0; i < n; i++)
+        cout << "Node " << i << " -> " << dist[i] << endl;
+}
+
+/* =========================================================
+   PART 2: DIJKSTRA WITH MIN-HEAP
+   Purpose: Weighted travel time (traffic / distance)
+   ========================================================= */
+
+void dijkstraMinHeap() {
+    int n = 6;
+    vector<vector<pair<int,int>>> graph(n);
+
+    graph[0] = {{1,4},{2,2}};
+    graph[1] = {{3,5}};
+    graph[2] = {{3,1}};
+    graph[3] = {{4,3}};
+    graph[4] = {{5,2}};
+
+    vector<int> dist(n, INT_MAX);
+    priority_queue<pair<int,int>, vector<pair<int,int>>, greater<pair<int,int>>> pq;
+
+    dist[0] = 0;
+    pq.push({0,0});
+
+    while (!pq.empty()) {
+        auto cur = pq.top(); pq.pop();
+        int d = cur.first, u = cur.second;
+
+        if (d > dist[u]) continue;
+
+        for (auto &e : graph[u]) {
+            int v = e.first, w = e.second;
+            if (dist[u] + w < dist[v]) {
+                dist[v] = dist[u] + w;
+                pq.push({dist[v], v});
+            }
+        }
+    }
+
+    cout << "\n--- Dijkstra Weighted Access Times ---\n";
+    for (int i = 0; i < n; i++)
+        cout << "Node " << i << " -> " << dist[i] << endl;
+}
+
+/* =========================================================
+   PART 3: KD-TREE CONCEPT (Nearest Facility)
+   Purpose: Find nearest facility using coordinates
+   ========================================================= */
+
+struct Point {
+    int x, y;
+};
+
+double distance(Point a, Point b) {
+    return sqrt((a.x - b.x)*(a.x - b.x) +
+                (a.y - b.y)*(a.y - b.y));
+}
+
+void nearestFacility() {
+    vector<Point> facilities = {{0,0}, {5,5}, {8,2}};
+    Point citizen = {4,3};
+
+    Point nearest = facilities[0];
+    double best = distance(citizen, nearest);
+
+    for (auto &f : facilities) {
+        double d = distance(citizen, f);
+        if (d < best) {
+            best = d;
+            nearest = f;
+        }
+    }
+
+    cout << "\n--- Nearest Facility (KD-Tree Concept) ---\n";
+    cout << "Nearest facility at (" 
+         << nearest.x << ", " << nearest.y << ")\n";
+}
+
+/* =========================================================
+   MAIN FUNCTION
+   ========================================================= */
+
+int main() {
+    multiSourceBFS();
+    dijkstraMinHeap();
+    nearestFacility();
+    return 0;
+}
 
