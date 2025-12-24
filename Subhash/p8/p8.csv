@@ -1,0 +1,133 @@
+#include <iostream>
+#include <vector>
+#include <queue>
+#include <stack>
+#include <set>
+#include <unordered_map>
+#include <map>
+using namespace std;
+
+/*
+MODEL 8: FRMHSS – Flood Risk Management & Hazard Simulation System
+Uses Grid + DFS + BFS + Flood-Fill + Multiple Data Structures
+*/
+
+#define N 5
+#define M 5
+
+// ---------------- STRUCT ----------------
+struct Cell {
+    int r, c, height;
+};
+
+// ---------------- GLOBALS ----------------
+int terrain[N][M] = {
+    {5, 4, 3, 2, 1},
+    {6, 5, 4, 3, 2},
+    {7, 6, 5, 4, 3},
+    {8, 7, 6, 5, 4},
+    {9, 8, 7, 6, 5}
+};
+
+bool visitedDFS[N][M] = {false};
+bool visitedBFS[N][M] = {false};
+
+int dr[4] = {1, -1, 0, 0};
+int dc[4] = {0, 0, 1, -1};
+
+set<pair<int,int>> floodedCells;
+unordered_map<int, string> riskLabel;
+
+// ---------------- DFS: WATER FLOW ----------------
+void dfsFlow(int r, int c) {
+
+    visitedDFS[r][c] = true;
+    floodedCells.insert({r, c});
+
+    for (int i = 0; i < 4; i++) {
+        int nr = r + dr[i];
+        int nc = c + dc[i];
+
+        if (nr >= 0 && nr < N && nc >= 0 && nc < M &&
+            !visitedDFS[nr][nc] &&
+            terrain[nr][nc] <= terrain[r][c]) {
+
+            dfsFlow(nr, nc);
+        }
+    }
+}
+
+// ---------------- BFS: FLOOD SPREAD ----------------
+void bfsFlood(queue<pair<int,int>> &q) {
+
+    while (!q.empty()) {
+        auto cur = q.front(); q.pop();
+        int r = cur.first;
+        int c = cur.second;
+
+        for (int i = 0; i < 4; i++) {
+            int nr = r + dr[i];
+            int nc = c + dc[i];
+
+            if (nr >= 0 && nr < N && nc >= 0 && nc < M &&
+                !visitedBFS[nr][nc] &&
+                terrain[nr][nc] <= terrain[r][c]) {
+
+                visitedBFS[nr][nc] = true;
+                floodedCells.insert({nr, nc});
+                q.push({nr, nc});
+            }
+        }
+    }
+}
+
+// ---------------- MAIN ----------------
+int main() {
+
+    cout << "=== FRMHSS : Flood Risk Assessment ===\n\n";
+
+    // Risk labels
+    riskLabel[0] = "Safe";
+    riskLabel[1] = "Moderate Risk";
+    riskLabel[2] = "High Risk";
+
+    // ---------- DFS FROM RIVER SOURCE ----------
+    cout << "DFS Flood Flow Simulation:\n";
+    dfsFlow(0, 4);  // river source (lowest point)
+
+    // ---------- BFS MULTI-SOURCE FLOOD ----------
+    queue<pair<int,int>> q;
+    q.push({0, 4});
+    visitedBFS[0][4] = true;
+    bfsFlood(q);
+
+    // ---------- PRIORITY QUEUE FOR RISK ----------
+    priority_queue<Cell, vector<Cell>, 
+        bool(*)(Cell,Cell)> pq(
+        [](Cell a, Cell b) {
+            return a.height > b.height;
+        }
+    );
+
+    for (auto &p : floodedCells) {
+        pq.push({p.first, p.second, terrain[p.first][p.second]});
+    }
+
+    // ---------- OUTPUT ----------
+    cout << "\nFlood-Prone Cells & Risk Levels:\n";
+    while (!pq.empty()) {
+        Cell c = pq.top(); pq.pop();
+
+        int risk;
+        if (c.height <= 2) risk = 2;
+        else if (c.height <= 4) risk = 1;
+        else risk = 0;
+
+        cout << "Cell (" << c.r << "," << c.c << ") "
+             << "Height=" << c.height
+             << " Risk=" << riskLabel[risk] << endl;
+    }
+
+    cout << "\nFlood simulation completed successfully.\n";
+    return 0;
+}
